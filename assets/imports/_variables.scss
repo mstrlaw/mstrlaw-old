@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa');
+
+/*
+  COLORS
+*/
+$black:         #000 !default;
+$blue:          #383aa7 !default;
+$blue-trans:    rgba(56, 58, 167, .5) !default;
+$gray:          #9E9E9E !default;
+$gray-dark:     #343A40 !default;
+$gray-light:    #A1A1A1 !default;
+$gray-lighter:  #DBDBDB !default;
+$gray-lightest: #EEEEEE !default;
+$green:         #026751 !default;
+$pink:          #ffbbb2 !default;
+$red:           #e0420e !default;
+$white:         #FFFFFF !default;
+$yellow:        #f9d857 !default;
+
+$primary:       $blue;     
+$body-color:    $black;
+$body-bg:       $white;
+$link-color:    $primary;
+
+/*
+  FONT
+*/
+$font-family-monospace:     SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-base:  'Comfortaa', cursive;
+$font-size-base:    1rem !default;
+$font-weight-base:  400 !default;
+$line-height-base:  1.5 !default;
+
+$link-decoration:   none !default;
+/*
+  SPACING
+*/
+$top-push-desktop: 10vh;
+$top-push-mobile: 15vh;
+/*
+  MEDIA QUERIES
+*/
+$xsmall:    "only screen and (max-width : 480px)";
+$small:     "only screen and (max-width : 768px)";
+$medium:    "only screen and (max-width : 992px)";
+$large:     "only screen and (max-width : 1200px)";

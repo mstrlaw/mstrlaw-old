@@ -1,0 +1,21 @@
+.logo{
+  width: 100%;
+  max-width: 250px;
+
+  .left-side{
+    fill: darken($blue, 1%);
+  }
+  .right-side{
+    fill: darken($blue, 10%);
+  }
+
+  &.yellow{
+    .left-side{
+      fill: $yellow;
+      fill: darken($yellow, 20%);
+    }
+    .right-side{
+      fill: darken($yellow, 30%);
+    }
+  }
+}

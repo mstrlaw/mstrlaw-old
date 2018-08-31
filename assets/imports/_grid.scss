@@ -1,0 +1,24 @@
+.container{
+  max-width: 80vw;
+  margin: $top-push-desktop auto;
+
+  &.full{
+    .inner-container{
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+
+  .inner-container{
+    width: 57vw;
+    margin-left: 23vw;
+  }
+
+  @media #{$medium} {
+    margin: $top-push-mobile auto;
+    .inner-container{
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+}
