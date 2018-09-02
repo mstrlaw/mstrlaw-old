@@ -59,6 +59,8 @@ module.exports = {
     '@/assets/app.scss',
   ],
   plugins: [
-    '~/plugins/butterCms'
+    '~/plugins/butterCms',
+    { src: '~plugins/ga.js', ssr: false },
+    { src: '~plugins/hotjar.js', ssr: false }
   ],
 }

@@ -73,7 +73,13 @@
       <li>
         <p><strong>Google Analytics</strong></p>
         <p>Google Analytics is a web analytics Website offered by Google that tracks and reports website traffic. Google uses the data collected to track and monitor the use of my Website. This data is shared with other Google Websites. Google may use the collected data to contextualize and personalize the ads of its own advertising network.</p>
-        <p>You can opt-out of having made your activity on the Website available to Google Analytics by installing the Google Analytics opt-out browser add-on. The add-on prevents the Google Analytics JavaScript (ga.js, analytics.js, and dc.js) from sharing information with Google Analytics about visits activity.</p>                <p>For more information on the privacy practices of Google, please visit the <a href="https://policies.google.com/privacy?hl=en">Google Privacy &amp; Terms web page</a></p>
+        <p>You can opt-out of having made your activity on the Website available to Google Analytics by installing the Google Analytics opt-out browser add-on. The add-on prevents the Google Analytics JavaScript (ga.js, analytics.js, and dc.js) from sharing information with Google Analytics about visits activity.</p>                <p>For more information on the privacy practices of Google, please visit the <a href="https://policies.google.com/privacy?hl=en" target="_blank">Google Privacy &amp; Terms web page</a></p>
+      </li>
+      <li>
+          <p><strong>Hotjar</strong></p>
+          <p>
+              We use <a href="https://www.hotjar.com/" target="_blank">Hotjar</a> in order to better understand our users’ needs and to optimize this service and experience. Hotjar is a technology service that helps us better understand our users experience (e.g. how much time they spend on which pages, which links they choose to click, what users do and don’t like, etc.) and this enables us to build and maintain our service with user feedback. Hotjar uses cookies and other technologies to collect data on our users’ behavior and their devices (in particular device's IP address (captured and stored only in anonymized form), device screen size, device type (unique device identifiers), browser information, geographic location (country only), preferred language used to display our website). Hotjar stores this information in a pseudonymized user profile. Neither Hotjar nor we will ever use this information to identify individual users or to match it with further data on an individual user. For further details, please see Hotjar’s privacy policy by clicking on <a href="https://www.hotjar.com/legal/policies/privacy" target="_blank">this link</a>.
+          </p>
       </li>
     </ul>
 
