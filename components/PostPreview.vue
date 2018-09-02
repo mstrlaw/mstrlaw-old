@@ -2,13 +2,15 @@
   <article>
     <h2>
       <router-link :to="{ name:'post-slug', params:{ slug:slug } }">{{ title }}</router-link>
-      <a href="#"></a>
     </h2>
     <small>
       <time :datetime="date">{{ readableDate }}</time>
     </small>
-    <img :src="image" alt="">
+    <router-link :to="{ name:'post-slug', params:{ slug:slug } }">
+      <img :src="image" alt="">
+    </router-link>
     <p>{{ summary }}</p>
+    <router-link :to="{ name:'post-slug', params:{ slug:slug } }">Continue reading</router-link>
   </article>  
 </template>
 

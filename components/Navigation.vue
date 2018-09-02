@@ -20,7 +20,7 @@
         <h2>Hey there, <i class="twa twa-wave" /></h2>
         <h3>I'm Lawrence.</h3>
         
-        <p>This is my personal website where I post about stuff.</p>
+        <p>This is my personal website where I post about stuff I do, see or think.</p>
         
         <p>I'm usually building digital products.</p>
         
