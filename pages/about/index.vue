@@ -26,6 +26,7 @@
             <li><a href="https://www.linkedin.com/in/lawrencebraun/" target="_blank">LinkedIn</a></li>
             <li><a href="https://github.com/mstrlaw" target="_blank">GitHub</a></li>
             <li><a href="https://www.facebook.com/mstrlaw" target="_blank">Facebook</a></li>
+            <li><a href="https://medium.com/@mstrlaw" target="_blank">Medium</a></li>
             <li><a href="https://www.instagram.com/mstrlaw/" target="_blank">Instagram</a></li>
             <li><a href="https://twitter.com/mstrlaw" target="_blank">Twitter</a></li>
           </ul>
@@ -48,6 +49,11 @@ import moment from 'moment'
 
 export default {
   name: 'About',
-  layout: 'minimal'
+  layout: 'minimal',
+  head(){
+    return{
+      titleTemplate: 'About —— mstrlaw.com'
+    }
+  },
 }
 </script>

@@ -13,6 +13,7 @@ import Navigation from '@/components/Navigation'
 export default {
   components: {
     Navigation
-  }
+  },
+  scrollToTop: true,
 }
 </script>

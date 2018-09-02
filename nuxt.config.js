@@ -23,7 +23,7 @@ module.exports = {
       { rel: 'manifest', href: '/favicons/site.webmanifest' },
       { rel: 'mask-icon', href: '/favicons/safari-pinned-tab.svg', color:'#5bbad5'},
       { rel: 'shortcut icon', type: 'image/x-icon', href: '/favicons/favicon.ico' }
-    ],
+    ]
   },
   /*
   ** Customize the progress bar color
@@ -53,11 +53,10 @@ module.exports = {
     }
   },
   modules: [
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
   ],
   css: [
     '@/assets/app.scss',
-    // 'bulma',
   ],
   plugins: [
     '~/plugins/butterCms'

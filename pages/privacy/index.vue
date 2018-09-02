@@ -73,7 +73,7 @@
       <li>
         <p><strong>Google Analytics</strong></p>
         <p>Google Analytics is a web analytics Website offered by Google that tracks and reports website traffic. Google uses the data collected to track and monitor the use of my Website. This data is shared with other Google Websites. Google may use the collected data to contextualize and personalize the ads of its own advertising network.</p>
-        <p>You can opt-out of having made your activity on the Website available to Google Analytics by installing the Google Analytics opt-out browser add-on. The add-on prevents the Google Analytics JavaScript (ga.js, analytics.js, and dc.js) from sharing information with Google Analytics about visits activity.</p>                <p>For more information on the privacy practices of Google, please visit the Google Privacy & Terms web page: <a href="https://policies.google.com/privacy?hl=en">https://policies.google.com/privacy?hl=en</a></p>
+        <p>You can opt-out of having made your activity on the Website available to Google Analytics by installing the Google Analytics opt-out browser add-on. The add-on prevents the Google Analytics JavaScript (ga.js, analytics.js, and dc.js) from sharing information with Google Analytics about visits activity.</p>                <p>For more information on the privacy practices of Google, please visit the <a href="https://policies.google.com/privacy?hl=en">Google Privacy &amp; Terms web page</a></p>
       </li>
     </ul>
 
@@ -98,6 +98,11 @@
 
 export default {
   name: 'Privacy',
-  layout: 'minimal'
+  layout: 'minimal',
+  head(){
+    return{
+      titleTemplate: 'Privacy —— mstrlaw.com'
+    }
+  },
 }
 </script>

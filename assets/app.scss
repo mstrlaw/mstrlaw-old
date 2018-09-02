@@ -52,4 +52,23 @@ article{
       margin-top: 15vh;
     }
   }
+
+  pre{
+    background: $gray-lightest;
+    padding: 15px;
+  }
+
+  table{
+    border: none;
+    tr, td{
+      border: none;
+    }
+    @media #{$medium} {
+      display: block;
+      tr, td{
+        display: block;
+        width: 100%!important;
+      }
+    }
+  }
 }

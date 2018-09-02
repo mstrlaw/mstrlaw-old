@@ -15,6 +15,11 @@ import moment from 'moment'
 export default {
   name: 'Post',
   layout: 'innerPage',
+  head(){
+    return{
+      titleTemplate: `${this.title} —— mstrlaw.com`
+    }
+  },
   data(){
     return {
       title: 'Example title',
