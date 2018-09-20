@@ -1,5 +1,6 @@
 <template>
   <div class="inner-container">
+    <div v-if="!posts">Unable to load blog :(</div>
     <PostPreview
       v-for="(post, index) in posts" 
       :key="index"
@@ -22,20 +23,28 @@ export default {
   },
   data(){
     return {
-      posts: []
+      posts: false
     }
   },
   async asyncData(context){
 
-    let res  = await context.app.butter.post
+    await context.app.butter.post
       .list({
         page: 1, 
         page_size: 10
       })
+      .then(res => {
+        return {
+          posts: res.data.data
+        }
+      })
+      .catch(err => {
+        console.log('error')
+      })
 
-    return {
-      posts: res.data.data
-    }
+    // return {
+    //   posts: res.data.data
+    // }
   }
 }
 </script>

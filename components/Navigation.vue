@@ -25,6 +25,7 @@
         <p>I'm usually building digital products.</p>
         
         <p>You can find me around the web using <a href="#">@mstrlaw</a></p>
+
       </div>
       
       <div class="nav-footer">
@@ -42,6 +43,8 @@
           </nuxt-link>
         </div>
         <small>© mstrlaw.com — {{ currentYear }}</small>
+        <br>
+        <small><p>Powered by <a href="https://buttercms.com" target="_blank"><img style="width: 120px;" src="https://cdn.buttercms.com/PGJPyIwaQ2KnOA8UyKfH" alt="ButterCMS"></a></p></small>
       </div>
     </div>
 
