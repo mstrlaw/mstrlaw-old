@@ -28,23 +28,20 @@ export default {
   },
   async asyncData(context){
 
-    await context.app.butter.post
+    let res  = await context.app.butter.post
       .list({
         page: 1, 
         page_size: 10
       })
-      .then(res => {
-        return {
-          posts: res.data.data
-        }
-      })
+      .then(res => { return res })
       .catch(err => {
+        console.log(err)
         console.log('error')
       })
 
-    // return {
-    //   posts: res.data.data
-    // }
+    return {
+      posts: res.data.data
+    }
   }
 }
 </script>
