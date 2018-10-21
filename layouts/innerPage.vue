@@ -14,6 +14,7 @@ export default {
   components: {
     Navigation
   },
+  middleware: 'hideLinks',
   scrollToTop: true,
 }
 </script>

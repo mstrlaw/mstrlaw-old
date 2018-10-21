@@ -1,5 +1,5 @@
 <template>
-  <nav :class="{ 'show-more':showMoreLinks }" class="nav">
+  <nav :class="{ 'show-more':showSocialMenu }" class="nav">
     <div v-if="showBreadcrumb" class="breadcrumbs">
       <nuxt-link to="/">&lt; back</nuxt-link>
     </div>
@@ -24,7 +24,20 @@
         
         <p>I'm usually building digital products.</p>
         
-        <p>You can find me around the web using <a href="#">@mstrlaw</a></p>
+        <div>
+          <p>You can find me around the web using <a href="#" @click.prevent="toggleSocial">@mstrlaw</a></p>
+          <div :class="{ 'visible': showSocialMenu }" class="social">
+            <ul>
+              <li><a href="https://www.facebook.com/mstrlaw" target="_blank">Facebook</a></li>
+              <li><a href="https://github.com/mstrlaw" target="_blank">GitHub</a></li>
+              <li><a href="https://gitlab.com/mstrlaw" target="_blank">GitLab</a></li>
+              <li><a href="https://www.instagram.com/mstrlaw/" target="_blank">Instagram</a></li>
+              <li><a href="https://www.linkedin.com/in/lawrencebraun/" target="_blank">LinkedIn</a></li>
+              <li><a href="https://medium.com/@mstrlaw" target="_blank">Medium</a></li>
+              <li><a href="https://twitter.com/mstrlaw" target="_blank">Twitter</a></li>
+            </ul>
+          </div>
+        </div>
 
       </div>
       
@@ -54,6 +67,7 @@
 <script>
 import Logo from '@/components/Logo'
 import moment from 'moment'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'Navigation',
@@ -76,8 +90,16 @@ export default {
       currentYear: moment().format('YYYY')
     }
   },
+  computed:{
+    ...mapGetters({
+      showSocialMenu: 'showSocialMenu',
+    }),
+  },
   methods:{
-    showMore(){ this.showMoreLinks = !this.showMoreLinks }
+    showMore(){ this.showMoreLinks = !this.showMoreLinks },
+    toggleSocial(){
+      this.$store.dispatch('toggleSocial', !this.showSocialMenu)
+    }
   }
 }
 </script>

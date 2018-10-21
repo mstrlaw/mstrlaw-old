@@ -14,6 +14,7 @@ export default {
   components: {
     Navigation
   },
+  middleware: 'hideLinks',
   head(){
     return{
       titleTemplate: 'Lawrence Braun —– msrlaw.com'
