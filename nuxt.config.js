@@ -12,12 +12,12 @@ module.exports = {
         { name:'robots', content:'index, follow' },
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1, minimum-scale=1' },
-        { hid: 'description', name: 'description', content: 'Extract business intelligence from the media landscape' },
-        { hid: 'author', name: 'author', content: 'dataglass.io' },
+        { hid: 'description', name: 'description', content: 'Lawrence Braun\'s personal website'  },
+        { hid: 'author', name: 'author', content: 'Lawrence Braun' },
         // Opengraph
-        { hid: 'og:title', name: 'og:title', content: 'Extract business intelligence from the media landscape - Dataglass.io' },
-        { hid: 'og:site_name', name: 'og:site_name', content: 'Dataglass' },
-        { hid: 'og:url', name: 'og:url', content: 'https://dataglass.io' },
+        { hid: 'og:title', name: 'og:title', content: 'Lawrence Braun\'s personal website' },
+        { hid: 'og:site_name', name: 'og:site_name', content: 'Mstrlaw' },
+        { hid: 'og:url', name: 'og:url', content: 'https://mstrlaw.com' },
         /*
         { hid: 'og:description', name: 'og:description', content: 'Extract business intelligence from the media landscape' },
         { hid: `og:image`, name: 'og:image', content: '/images/logo_card.jpg' },
@@ -82,7 +82,7 @@ module.exports = {
   modules: [
     '@nuxtjs/dotenv',
     '@nuxtjs/axios',
-    [ '@nuxtjs/ngrok', { subdomain: 'mstrlaw' } ]
+    '@nuxtjs/ngrok'
   ],
   /*
   ** Router configuration

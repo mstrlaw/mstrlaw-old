@@ -1,84 +1,96 @@
 <template>
-  <section class="container home">
-    <h1 class="headline">MSTRLAW</h1>
-    <div class="content-wrapper">
-      <h1
+  <div>
+    <section class="container home">
+      <h1 class="headline">MSTRLAW</h1>
+      <div class="content-wrapper">
+        <h1
+          :class="{ 'visible': visible }"
+          class="description"
+        >Hey there! I'm Lawrence — fullstack Javascript developer and tech consultant.</h1>
+        <h3
+          :class="{ 'visible': visible }"
+          class="description description-2"
+        >I 
+          <a
+            href="#"
+            class="link green"
+            v-tooltip="{
+              autoHide: false,
+              content: `<div class='work-tooltip'><span class='quote'>Lawrence is a leader and passionate about all things UX. He has a keen eye for detail, allowing him to deliver high quality products. In the time he spent working with us at SeaBookings, he has helped to design and develop the revamped SeaBookings Portal. A truly team player that was always ready to help.</span><div class='source'><a href='https://www.linkedin.com/in/fabioneves85/' target='blank' class='client'>Fábio Neves</a><span class='company'>CTO, SeaBookings</span></div><div>`, 
+              classes: 'border p-0 w-full max-w-xs',
+              placement: 'auto',
+              html: true,
+              delay: { show: 100, hide: 500 },
+            }"
+          >build User Interfaces</a>, provide tech consultancy
+          <!--a
+            href="#"
+            class="link blue"
+            v-tooltip="{
+              autoHide: false,
+              content: `<div class='work-tooltip'><span class='quote'>Lawrence helped us prototype a complex interface for our Penetration Test solution and assisted in recruiting the right team to deliver the work.</span><div class='source'><a href='https://www.linkedin.com/in/sascha-h-30a30a102/' target='blank' class='client'>Sascha Herzog</a><span class='company'>Technical Director, Nside Attack Logic</span></div><div>`, 
+              placement: 'auto',
+              html: true,
+              delay: { show: 100, hide: 500 },
+            }"
+          >tech consultancy and PM services</a--> and deliver 
+          <a
+            href="#"
+            class="link red"
+            v-tooltip="{
+              autoHide: false,
+              content: `<div class='work-tooltip'><span class='quote'>Lawrence is highly skilled and was extremely valuable in delivering a quality product in a very short period of time. He was great to work with and went above and beyond to ensure our Project launched on time. Since launch we have received positive feedback from our clients who appreciate the ease of use.</span><div class='source'><a href='https://www.linkedin.com/in/michellezar/' target='blank' class='client'>Michelle Zar</a><span class='company'>Technical Project Manager, Politico</span></div><div>`, 
+              placement: 'auto',
+              html: true,
+              delay: { show: 100, hide: 500 },
+            }"
+          >high quality SPAs</a> that integrate with your stack.</h3>
+
+          <ContactSlider />
+        
+      </div>
+      <img
         :class="{ 'visible': visible }"
-        class="description"
-      >Hey there! I'm Lawrence — fullstack Javascript developer and tech consultant.</h1>
-      <h3
+        src="/images/law_desktop.png"
+        alt="Law pic desktop"
+        class="image image-1"
+      >
+    </section>
+    <div class="img-wrapper">
+      <img
         :class="{ 'visible': visible }"
-        class="description description-2"
-      >I 
-        <a
-          href="#"
-          class="link green"
-          v-tooltip="{
-            autoHide: false,
-            content: `<div class='work-tooltip'><span class='quote'>Lawrence is a leader and passionate about all things UX. He has a keen eye for detail, allowing him to deliver high quality products. In the time he spent working with us at SeaBookings, he has helped to design and develop the revamped SeaBookings Portal. A truly team player that was always ready to help.</span><div class='source'><a href='https://www.linkedin.com/in/fabioneves85/' target='blank' class='client'>Fábio Neves</a><span class='company'>CTO, SeaBookings</span></div><div>`, 
-            classes: 'border p-0 w-full max-w-xs',
-            placement: 'auto',
-            html: true,
-            delay: { show: 100, hide: 500 },
-          }"
-        >build User Interfaces</a>, provide tech consultancy
-        <!--a
-          href="#"
-          class="link blue"
-          v-tooltip="{
-            autoHide: false,
-            content: `<div class='work-tooltip'><span class='quote'>Lawrence helped us prototype a complex interface for our Penetration Test solution and assisted in recruiting the right team to deliver the work.</span><div class='source'><a href='https://www.linkedin.com/in/sascha-h-30a30a102/' target='blank' class='client'>Sascha Herzog</a><span class='company'>Technical Director, Nside Attack Logic</span></div><div>`, 
-            placement: 'auto',
-            html: true,
-            delay: { show: 100, hide: 500 },
-          }"
-        >tech consultancy and PM services</a--> and deliver 
-        <a
-          href="#"
-          class="link red"
-          v-tooltip="{
-            autoHide: false,
-            content: `<div class='work-tooltip'><span class='quote'>Lawrence is highly skilled and was extremely valuable in delivering a quality product in a very short period of time. He was great to work with and went above and beyond to ensure our Project launched on time. Since launch we have received positive feedback from our clients who appreciate the ease of use.</span><div class='source'><a href='https://www.linkedin.com/in/michellezar/' target='blank' class='client'>Michelle Zar</a><span class='company'>Technical Project Manager, Politico</span></div><div>`, 
-            placement: 'auto',
-            html: true,
-            delay: { show: 100, hide: 500 },
-          }"
-        >high quality SPAs</a> that integrate with your stack.</h3>
-      
+        src="/images/law_mobile.png"
+        alt="Law pic mobile"
+        class="image image-2"
+      >
     </div>
-    <img
-      :class="{ 'visible': visible }"
-      src="/images/law_test.png"
-      alt="Law pic"
-      class="image image-1"
-    >
-    <img
-      :class="{ 'visible': visible }"
-      src="/images/law_test.png"
-      alt="Law pic"
-      class="image image-2"
-    >
-  </section>
+  </div>
 </template>
 
 <script>
-import { menuTransition } from '@/mixins/menuTransition'
+  
+  import ContactSlider from '@/components/ContactSlider'
 
-export default {
-  name: 'Home',
-  mixins: [ menuTransition ],
-  transition: 'page',
-  data() {
-    return {
-      visible: false
+  import { menuTransition } from '@/mixins/menuTransition'
+
+  export default {
+    name: 'Home',
+    mixins: [ menuTransition ],
+    transition: 'page',
+    components: {
+      ContactSlider
+    },
+    data() {
+      return {
+        visible: false
+      }
+    },
+    mounted() {
+      setTimeout( () => {
+        this.visible = true
+      }, 500)
     }
-  },
-  mounted() {
-    setTimeout( () => {
-      this.visible = true
-    }, 500)
   }
-}
 </script>
 
 <style lang="scss">
@@ -95,6 +107,10 @@ export default {
     @media #{$medium} {
       width: 100%;
     }
+  }
+
+  .home{
+    height: 100%;
   }
 
   .description, .description-2, .image-1{
@@ -151,6 +167,8 @@ export default {
   
     &:not(.description-2){
       margin-top: 3em;
+      line-height: 1.3em;
+
       @media #{$medium} {
         margin-top: 1.5em;
       }
@@ -175,36 +193,30 @@ export default {
     }
   }
 
-  .image{
-    z-index: -1;
-    display: none!important;
-  }
-
   .image-1{
     position: fixed;
     bottom: 0;
-    top: 0;
-    right: 0;
-    height: 100vh;
+    top: 10vh;
+    right: 10vw;
+    height: auto;
+    width: 100%;
+    min-width: 400px;
+    max-width: 30%;
+    z-index: -1;
+  }
+
+  .img-wrapper{
+    position: absolute;
+    left: 0;
+    z-index: -1;
   }
 
   .image-2{
+    position: relative;
     display: none;
-    position: fixed;
-    bottom: -20vw;
-    right: 0;
     height: auto;
     width: 100%;
-    z-index: -1;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 1s, transform .5s;
-    &.visible{
-      opacity: 1;
-      transform: translateY(0px);
-      transition: opacity 1s, transform .5s;
-      transition-delay: 1s;
-    }
+    z-index: 1;
   }
 
   .work-tooltip{
@@ -247,9 +259,9 @@ export default {
   }
 
   @media #{$large} {
-    .image-1{
-      right: -20%;
-    }
+    // .image-1{
+    //   right: -20%;
+    // }
   }
   @media #{$medium} {
     .image-1{

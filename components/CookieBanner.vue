@@ -60,7 +60,7 @@
     margin: 0 auto;
     width: 100%;
     padding: 0 10vw;
-    transform: translateY(150px);
+    transform: translateY(350px);
     transition: transform .5s;
 
     &.display{

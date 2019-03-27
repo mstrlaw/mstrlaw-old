@@ -47,6 +47,11 @@ body{
       -webkit-transform: skewY(-12deg);
       transform: skewY(-12deg);
       transition: transform .5s, background 1s;
+      
+      @media #{$small} {
+        position: absolute;
+        height: 100vh;
+      }
     }
     .container:not(.first-render){
       .headline{
@@ -77,6 +82,7 @@ body{
 
   &.about{
     &:before{
+      position: absolute;
       background: #283439;
       -webkit-transform: skewY(12deg);
       transform: skewY(12deg);

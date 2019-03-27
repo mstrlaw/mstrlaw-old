@@ -37,7 +37,7 @@ export default {
 <style lang="scss">
   @import "@/assets/imports/_variables.scss";
 
-  .bg-white{
+  .faq-section{
     .about-description{
       color: $black;
       text-shadow: none;

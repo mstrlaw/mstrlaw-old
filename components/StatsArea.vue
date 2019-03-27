@@ -8,10 +8,11 @@
         <div class="about-description stats-data" >
           <p>I <em>try</em> to balance my work and personal life but the line often gets blurry.</p>
           
-          <p>Here are some stats for the past 7 days:</p>
-          
-          <p>Total screen time: {{ formatTime(totalTime) }}</p>
-          <small v-html="languages" />
+          <p>{{ formatTime(totalTime) }} screen time for the past 7 days.</p>
+          <small
+            class="tools"
+            v-html="languages"
+          />
         </div>
       </div>
     </div>
@@ -23,11 +24,11 @@
         type="area"
         :options="chartOptions"
         :series="series"
-        height="250"
+        height="150"
       />
     </div>
 
-    <div class="bg-white">
+    <div class="faq-section">
       <div class="container">
         <h1 class="headline">FAQs</h1>
         
@@ -81,27 +82,27 @@
                 href="https://www.linkedin.com/in/lawrencebraun/"
                 target="_blank"
                 class="about-link"
-              >LinkedIn</a>,
+              >LinkedIn</a>,&nbsp;
               <a
                 href="https://www.instagram.com/mstrlaw/"
                 target="_blank"
                 class="about-link"
-              >Instagram</a>,
+              >Instagram</a>,&nbsp;
               <a
                 href="https://twitter.com/mstrlaw"
                 target="_blank"
                 class="about-link"
-              >Twitter</a>,
+              >Twitter</a>,&nbsp;
               <a
                 href="https://medium.com/@mstrlaw"
                 target="_blank"
                 class="about-link"
-              >Medium</a>,
+              >Medium</a>,&nbsp;
               <a
                 href="https://www.facebook.com/mstrlaw"
                 target="_blank"
                 class="about-link"
-              >Facebook</a>,
+              >Facebook</a>,&nbsp;
               <a
                 href="https://github.com/mstrlaw"
                 target="_blank"
@@ -143,6 +144,7 @@
       return {
         hasData: false,
         totalTime: 0,
+        colors: ['#283439'],
         chartOptions: {
           chart: {
             type: 'area',
@@ -154,28 +156,18 @@
             }
           },
           stroke: {
-            width: 0,
+            width: 2,
             curve: 'smooth',
-            colors: ['#707577']
-          },
-          grid: {
-            padding: {
-              left: 0,
-              right: 0
-            }
+            colors: ['#f50057']
           },
           yaxis: {
             min: 0
           },
           fill: {
-            colors: ['#707577', '#FFF'],
-            type: 'gradient',
-            gradient: {
-              shadeIntensity: 1,
-              opacityFrom: 1,
-              opacityTo: 1,
-              stops: [0, 100]
-            }
+            // colors: ['transparent', '#283439'],
+            // opacity: 0,
+            opacity: 0,
+            type: 'solid',
           },
           markers: {
             size: 0,
@@ -291,8 +283,23 @@
 <style lang="scss">
   @import "@/assets/imports/_variables.scss";
 
-  .bg-white {
-    background: #FFF;
+  .faq-section {
+    &:before{
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 80vh;
+      margin-top: 20px;
+      -webkit-transform: skewY(12deg);
+      transform: skewY(12deg);
+      transition: transform .5s, background 1s;
+      background: #FFF;
+      background-size: 800% 800%;
+      z-index: -1;
+      @media #{$small} {
+        margin-top: 150px;
+      }
+    }
   }
 
   .source {
@@ -318,6 +325,11 @@
         margin-bottom: 0px;
       }
     }
+    .tools{
+      @media #{$small} {
+        display: none;
+      }
+    }
   }
 
   .mb {
@@ -327,23 +339,9 @@
   .chart-wrapper {
     // position: absolute;
     // margin-top: -50px;
-    // background: #283439;
     // width: 100%;
 
-    &:after {
-      display: none;
-      content: '';
-      position: absolute;
-      height: 2px;
-      width: 100%;
-      bottom: 0;
-      background: white;
-      @media #{$small} {
-        display: block;
-      }
-    }
     > div {
-      margin-top: -150px;
       z-index: -1;
       @media #{$small} {
         margin-top: -50px;
