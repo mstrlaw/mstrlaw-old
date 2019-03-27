@@ -162,9 +162,6 @@
     border-radius: 45px;
     @include shadow;
   }
-  input[type=range]:focus::-webkit-slider-runnable-track {
-    background: orange;
-  }
   input[type=range]::-moz-focus-outer {
     border: 0;
   }
