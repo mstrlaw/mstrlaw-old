@@ -147,7 +147,7 @@ export default {
 
         &:after{
           opacity: 1;
-          transition: opacity 5s;
+          transition: opacity 1.5s;
         }
 
         .nav-wrapper{
@@ -202,7 +202,7 @@ export default {
         position: absolute;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, .2);
+        background-color: rgba(0, 0, 0, .4);
         background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAGUlEQVQIW2NkYGD4z8DAwMiABFA4MHEKBQFmoAEGdnHj3wAAAABJRU5ErkJggg==);
         background-repeat: repeat;
         z-index: 1;

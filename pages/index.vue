@@ -258,18 +258,12 @@
     }
   }
 
-  @media #{$large} {
-    // .image-1{
-    //   right: -20%;
-    // }
-  }
   @media #{$medium} {
     .image-1{
       display: none;
     }
     .image-2{
       display: block;
-      // left: -100%;
     }
   }
 </style>

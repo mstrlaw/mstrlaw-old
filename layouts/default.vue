@@ -1,7 +1,7 @@
 <template>
   <div>
     <Navigation />
-    <div :class="[firstRender, { 'blur': openMenu === 'open' }]">
+    <div :class="firstRender">
       <nuxt/>
     </div>
     <CookieBanner />
@@ -38,19 +38,6 @@ export default {
       this.visible = true
     }, 500)
   },
-  computed: {
-    ...mapGetters({
-      openMenu: 'openMenu',
-    })
-  },
   scrollToTop: true,
 }
 </script>
-
-<style lang="scss">
-  .blur{
-    -webkit-filter: blur(3px);
-    filter: blur(3px);
-    transition: filter .5s;
-  }
-</style>

@@ -8,7 +8,12 @@
         <div class="about-description stats-data" >
           <p>I <em>try</em> to balance my work and personal life but the line often gets blurry.</p>
           
-          <p>{{ formatTime(totalTime) }} screen time for the past 7 days.</p>
+          <p>{{ formatTime(totalTime) }} screen time for the past 7 days<sup>&nbsp;<small>Source:&nbsp;
+            <a
+              href="https://wakatime.com"
+              target="_blank"
+              class="source"
+            >Wakatime</a></small></sup></p>
           <small
             class="tools"
             v-html="languages"

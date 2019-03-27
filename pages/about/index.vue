@@ -56,11 +56,4 @@ export default {
   .flex {
     display: flex;
   }
-  
-  .image-2{
-    @media #{$small} {
-      right: -50%;
-      z-index: -2;
-    }
-  }
 </style>

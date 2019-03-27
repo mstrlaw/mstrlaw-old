@@ -20,19 +20,6 @@
       class="address"
     >{{ finalEmail }}</a>
   </div>
-  <!--div class="slider-wrapper">
-    <div
-      v-hammer:swipe="handleSwipe"
-      class="contact-slider"
-    >
-      <div class="initiator"/>
-      <div
-        v-hammer:swipe.left="handleSwipe"
-        class="toggle"
-      />
-      <div class="receiver"/>
-    </div>
-  </div-->
 </template>
 
 <script>
@@ -80,12 +67,12 @@
 </script>
 
 <style lang="scss" scoped>
-
+  @import "@/assets/imports/_variables.scss";
   @import "@/assets/utils/_mixins.scss";
 
   .contact-slide-wrapper{
     position: relative;
-    max-width: 350px;
+    max-width: 450px;
     width: 100%;
     margin-top: 15px;
     opacity: 0;
@@ -130,6 +117,20 @@
       left: 0px;
       z-index: -1;
       font-weight: bold;
+      font-size: 1.2em;
+    }
+
+    @media #{$medium} {
+      max-width: 100%;
+      
+      .title{
+        text-align: center;
+      }
+
+      .input-wrapper{
+        width: 80%;
+        margin: 0 auto;
+      }
     }
   }
 
@@ -147,7 +148,6 @@
     height: 35px;
     cursor: pointer;
     animate: 0.2s;
-    // background: lighten(#283439, 70%);
     background: transparent;
     border-radius: 45px;
     box-shadow: inset 0 0px 0px 4px rgba(0, 0, 0, 0.1);
@@ -162,9 +162,12 @@
     border-radius: 45px;
     @include shadow;
   }
-  /*input[type=range]:focus::-webkit-slider-runnable-track {
+  input[type=range]:focus::-webkit-slider-runnable-track {
     background: orange;
-  }*/
+  }
+  input[type=range]::-moz-focus-outer {
+    border: 0;
+  }
   input[type=range]::-moz-range-track {
     width: 100%;
     height: 35px;
@@ -172,16 +175,17 @@
     animate: 0.2s;
     background: transparent;
     border-radius: 45px;
-    @include shadow-no-hover();
+    box-shadow: inset 0 0px 0px 4px rgba(0, 0, 0, 0.1);
   }
   input[type=range]::-moz-range-thumb {
-    border: 1px solid #283439;
-    height: 35px;
-    width: 35px;
-    background: #283439;
+    border: 5px solid #c7ced0;
+    height: 25px;
+    width: 25px;
+    background: #dee5e8;
     cursor: pointer;
     -webkit-appearance: none;
     border-radius: 45px;
+    @include shadow;
   }
   input[type=range]::-ms-track {
     width: 100%;
