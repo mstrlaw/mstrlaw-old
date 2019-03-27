@@ -1,12 +1,12 @@
 <template>
   <section class="container">
     <nuxt-link
-      to="/blog"
+      to="/lab"
     >
-      <h1 class="headline">BLOG</h1>
+      <h1 class="headline">LAB</h1>
     </nuxt-link>
     <nuxt-link
-      to="/blog"
+      to="/lab"
       :class="visibleClass"
       class="back-link"
     >&lt;&nbsp;Back</nuxt-link>

@@ -111,8 +111,9 @@
                 href="https://gitlab.com/mstrlaw"
                 target="_blank"
                 class="about-link"
-              >GitLab</a>.<br>Besides these you may find me on other places using the handle <em>@mstrlaw</em>.
+              >GitLab</a>.
             </span>
+            <br>Besides these you may find me on other places using the handle <em>@mstrlaw</em>
           </p>
         </div>
       </div>
