@@ -1,7 +1,7 @@
 {
   "name": "mstrlaw",
   "version": "1.0.0",
-  "description": "Mstrlaw Website",
+  "description": "personal website",
   "author": "Lawrence Braun",
   "private": true,
   "scripts": {
@@ -13,18 +13,25 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "@nuxtjs/dotenv": "^1.1.1",
-    "buttercms": "^1.1.1",
-    "moment": "^2.22.2",
-    "nuxt": "^1.4.2"
+    "@nuxtjs/axios": "^5.4.1",
+    "@nuxtjs/dotenv": "^1.3.0",
+    "apexcharts": "^3.6.4",
+    "buttercms": "^1.1.4",
+    "js-cookie": "^2.2.0",
+    "medium-zoom": "^1.0.3",
+    "moment": "^2.24.0",
+    "nuxt": "^2.4.5",
+    "v-tooltip": "^2.0.0-rc.33",
+    "vue-apexcharts": "^1.3.1"
   },
   "devDependencies": {
+    "@nuxtjs/ngrok": "^1.2.4",
     "babel-eslint": "^8.2.1",
-    "eslint": "^4.15.0",
-    "eslint-friendly-formatter": "^3.0.0",
-    "eslint-loader": "^1.7.1",
-    "eslint-plugin-vue": "^4.7.1",
-    "node-sass": "^4.9.3",
+    "cross-env": "^5.0.1",
+    "eslint": "^5.0.1",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-vue": "^4.0.0",
+    "node-sass": "^4.11.0",
     "sass-loader": "^7.1.0"
   }
 }

@@ -1,60 +1,66 @@
 <template>
-  <div class="inner-container">
-    <h2>Lawrence Braun</h2>
-    <div class="about">
-      <div class="side">
-        <h3>About</h3>
-        <p>Swiss born with French &amp; Portuguese nationality, mostly European.</p>
-        <p>I have a background in Computer Science as well as Marketing Management.</p>
+  <div>
+    <section class="container">
+      <h1 class="headline">HELLO</h1>
+      <div class="push-top about-description">
+        <p>Lawrence Braun de Almeida.<br>Swiss born with French/Portuguese nationality — mostly European.</p>
         
-        <h3>What I do</h3>
-        <p><b>Build web applications</b> using:</p> 
-        <ul>
-          <li>Javascript, Node, Vue, Nuxt, Meteor, MongoDB</li>
-          <li>CSS3/SCSS, Bootstrap, Foundation, Bulma</li>
-          <li>GitHub, GitLab, BitBucket, Trello, Jira, Digital Ocean, Netlify, Datadog, Rollbar, Slack and many more</li>
-        </ul>
-        <p><b>Provide technical consulting</b> such as:</p> 
-        <ul>
-          <li>Solving business problems using digital solutions;</li>
-          <li>Lead or suport in project or team management;</li>
-          <li>Assisting in recruitment of technical candidates;</li>
-        </ul>
-        <h3>Social Media</h3>
-        <div class="social">
-          <ul>
-            <li><a href="https://www.facebook.com/mstrlaw" target="_blank">Facebook</a></li>
-            <li><a href="https://github.com/mstrlaw" target="_blank">GitHub</a></li>
-            <li><a href="https://gitlab.com/mstrlaw" target="_blank">GitLab</a></li>
-            <li><a href="https://www.instagram.com/mstrlaw/" target="_blank">Instagram</a></li>
-            <li><a href="https://www.linkedin.com/in/lawrencebraun/" target="_blank">LinkedIn</a></li>
-            <li><a href="https://medium.com/@mstrlaw" target="_blank">Medium</a></li>
-            <li><a href="https://twitter.com/mstrlaw" target="_blank">Twitter</a></li>
-          </ul>
-        </div>
+        <p>A lot of things interest me when it comes to technology (in no particular order):<br>information extraction (scraping) &amp; processing, time tracking, UX/UI, data visualization, AI/ML and boring stuff like tech regulation &amp; legislation.</p>
         
-
+        <p>When not working, I spend time with my significant other, read, play with my 3 cats or do some gardening. When possible I'll catch some waves too.</p>
       </div>
-      <div class="side">
-        <div class="image-wrapper">
-          <img src="/images/law.jpg" alt="Lawrence">
-        </div>
-      </div>
-    </div>
-
+    </section>
+    <StatsArea />
   </div>
 </template>
 
 <script>
 import moment from 'moment'
+import StatsArea from '@/components/StatsArea'
+import { menuTransition } from '@/mixins/menuTransition'
 
 export default {
   name: 'About',
-  layout: 'minimal',
+  mixins: [ menuTransition ],
+  transition: { name: 'page' },
+  components: {
+    StatsArea
+  },
   head(){
     return{
       titleTemplate: 'About —— mstrlaw.com'
     }
-  },
+  }
 }
 </script>
+
+<style lang="scss">
+  @import "@/assets/imports/_variables.scss";
+
+  .bg-white{
+    .about-description{
+      color: $black;
+      text-shadow: none;
+    }
+  }
+
+  .about-description{
+    color: $white;
+    font-size: 1.2em;
+    text-shadow: 1px 0px 0px rgba(40, 52, 57, 1),
+                -1px 0px 0px rgba(40, 52, 57, 1),
+                0px 1px 0px rgba(40, 52, 57, 1),
+                0px -1px 0px rgba(40, 52, 57, 1);
+  }
+
+  .flex {
+    display: flex;
+  }
+  
+  .image-2{
+    @media #{$small} {
+      right: -50%;
+      z-index: -2;
+    }
+  }
+</style>

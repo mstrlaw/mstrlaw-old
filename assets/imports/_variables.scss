@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Comfortaa');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:400,500');
 
 /*
   COLORS
@@ -26,7 +26,7 @@ $link-color:    $primary;
   FONT
 */
 $font-family-monospace:     SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
-$font-family-base:  'Comfortaa', cursive;
+$font-family-base:  'Ubuntu', sans-serif;
 $font-size-base:    1rem !default;
 $font-weight-base:  400 !default;
 $line-height-base:  1.5 !default;
@@ -43,4 +43,6 @@ $top-push-mobile: 15vh;
 $xsmall:    "only screen and (max-width : 480px)";
 $small:     "only screen and (max-width : 768px)";
 $medium:    "only screen and (max-width : 992px)";
+$medium-up:    "only screen and (min-width : 992px)";
 $large:     "only screen and (max-width : 1200px)";
+$large-up:     "only screen and (min-width : 1200px)";

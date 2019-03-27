@@ -1,43 +1,106 @@
+const pkg = require('./package')
+
 module.exports = {
+  mode: 'spa',
+
   /*
   ** Headers of the page
   */
   head: {
-    title: 'MSTRLAW',
-    meta:[
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'MSTRLAW\'s Website' },
-      //Microsoft favicon tiles
-      { name:'msapplication-TileColor', content:'#00aba9' },
-      { name:'msapplication-config', content:"/favicons/browserconfig.xml" },
-      { name:'theme-color', content:"#ffffff" }
-    ],
-    /*
-    ** Favicons
-    */
-    link:[
-      { rel: 'apple-touch-icon', sizes: '180x180', href: '/favicons/apple-touch-icon.png' },
-      { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicons/favicon-32x32.png' },
-      { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicons/favicon-16x16.png' },
-      { rel: 'manifest', href: '/favicons/site.webmanifest' },
-      { rel: 'mask-icon', href: '/favicons/safari-pinned-tab.svg', color:'#5bbad5'},
-      { rel: 'shortcut icon', type: 'image/x-icon', href: '/favicons/favicon.ico' }
-    ]
-  },
+      title: 'Lawrence Braun - MSTRLAW',
+      meta:[
+        { name:'robots', content:'index, follow' },
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1, minimum-scale=1' },
+        { hid: 'description', name: 'description', content: 'Extract business intelligence from the media landscape' },
+        { hid: 'author', name: 'author', content: 'dataglass.io' },
+        // Opengraph
+        { hid: 'og:title', name: 'og:title', content: 'Extract business intelligence from the media landscape - Dataglass.io' },
+        { hid: 'og:site_name', name: 'og:site_name', content: 'Dataglass' },
+        { hid: 'og:url', name: 'og:url', content: 'https://dataglass.io' },
+        /*
+        { hid: 'og:description', name: 'og:description', content: 'Extract business intelligence from the media landscape' },
+        { hid: `og:image`, name: 'og:image', content: '/images/logo_card.jpg' },
+        { hid: 'twitter:card', name: 'twitter:card', content: '/images/logo_card.jpg' },
+        */
+
+        //Microsoft favicon tiles
+        { name:'msapplication-TileColor', content:'#00aba9' },
+        { name:'msapplication-config', content:"/favicons/browfrconfig.xml" },
+        { name:'theme-color', content:"#ffffff" }
+      ],
+      link:[
+        /* Favicons */
+        { rel: 'apple-touch-icon', sizes: '180x180', href: '/favicons/apple-touch-icon.png' },
+        { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicons/favicon-32x32.png' },
+        { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicons/favicon-16x16.png' },
+        { rel: 'manifest', href: '/favicons/site.webmanifest' },
+        { rel: 'mask-icon', href: '/favicons/safari-pinned-tab.svg', color:'#5bbad5'},
+        { rel: 'shortcut icon', type: 'image/x-icon', href: '/favicons/favicon.ico' },
+      ],
+    },
+
   /*
-  ** Customize the progress bar color
+  ** Customize the progress-bar color
   */
-  loading: { color: '#383AA7' },
+  loading: false,
+  
+  /*
+  ** Environment varialbes
+  */
+  env: {
+    HOTJAR_ID: process.env.HOTJAR_ID,
+  },
+
+  /*
+  ** Global CSS
+  */
+  css: [
+    '@/assets/app.scss'
+  ],
+
+  /*
+  ** Plugins to load before mounting the App
+  */
+  plugins: [
+    '@/plugins/apexcharts',
+    '@/plugins/butterCms',
+    '@/plugins/mediumZoom',
+    {
+      src: '@/plugins/hotjar',
+      ssr: false
+    },
+    {
+      src: '@/plugins/tooltip',
+      ssr: false
+    },
+  ],
+
+  /*
+  ** Nuxt.js modules
+  */
+  modules: [
+    '@nuxtjs/dotenv',
+    '@nuxtjs/axios',
+    [ '@nuxtjs/ngrok', { subdomain: 'mstrlaw' } ]
+  ],
+  /*
+  ** Router configuration
+  */
+  router: {
+    middleware: 'cookies'
+  },
+
   /*
   ** Build configuration
   */
   build: {
     /*
-    ** Run ESLint on save
+    ** You can extend webpack config here
     */
-    extend (config, { isDev, isClient }) {
-      if (isDev && isClient) {
+    extend(config, ctx) {
+      // Run ESLint on save
+      if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,
@@ -45,22 +108,6 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
-    },
-    postcss: {
-      plugins: {
-        'postcss-custom-properties': false
-      }
     }
-  },
-  modules: [
-    '@nuxtjs/dotenv',
-  ],
-  css: [
-    '@/assets/app.scss',
-  ],
-  plugins: [
-    '~/plugins/butterCms',
-    { src: '~plugins/ga.js', ssr: false },
-    { src: '~plugins/hotjar.js', ssr: false }
-  ],
+  }
 }
