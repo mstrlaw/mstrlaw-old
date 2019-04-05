@@ -10,14 +10,15 @@
       :class="visibleClass"
       class="back-link"
     >&lt;&nbsp;Back</nuxt-link>
-    <article :class="visibleClass">
+    FAKE PAGE
+    <!--article :class="visibleClass">
       <div class="title-section">
         <h2>{{ title }}</h2>
         <small>{{ formatDate }}</small>
       </div>
       <img :src="image" alt="">
       <div v-html="body" />
-    </article>
+    </article-->
   </section>
 </template>
 
@@ -42,34 +43,34 @@ export default {
       visibleClass: ''
     }
   },
-  mounted() {
-    if (process.server) {
-      mediumZoom('img')
-    }
-    setTimeout( () => {
-      this.visibleClass = 'visible'
-    }, 50)
-  },
-  computed:{
-    formatDate(){
-      return moment(this.date).format('DD MMM YY @HH:mm')
-    }
-  },
-  asyncData(context){
-    return axios.get(`https://api.buttercms.com/v2/posts/${ context.route.params.slug }?auth_token=${ process.env.CMS_TOKEN }`)
-      .then(res => {
-        return {
-          title: res.data.data.title,
-          date: res.data.data.published,
-          image: res.data.data.featured_image,
-          body: res.data.data.body
-        }
-      })
-      .catch(err => {
-        console.log('error')
-        console.log(err)
-      })
-  }
+  // mounted() {
+  //   if (process.server) {
+  //     mediumZoom('img')
+  //   }
+  //   setTimeout( () => {
+  //     this.visibleClass = 'visible'
+  //   }, 50)
+  // },
+  // computed:{
+  //   formatDate(){
+  //     return moment(this.date).format('DD MMM YY @HH:mm')
+  //   }
+  // },
+  // asyncData(context){
+  //   return axios.get(`https://api.buttercms.com/v2/posts/${ context.route.params.slug }?auth_token=${ process.env.CMS_TOKEN }`)
+  //     .then(res => {
+  //       return {
+  //         title: res.data.data.title,
+  //         date: res.data.data.published,
+  //         image: res.data.data.featured_image,
+  //         body: res.data.data.body
+  //       }
+  //     })
+  //     .catch(err => {
+  //       console.log('error')
+  //       console.log(err)
+  //     })
+  // }
 
 }
 </script>
