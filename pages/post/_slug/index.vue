@@ -27,8 +27,7 @@ import moment from 'moment'
 import mediumZoom from 'medium-zoom'
 
 export default {
-  name: 'Post',
-  layout: 'innerPage',
+  name: 'PostSlug',
   head(){
     return{
       titleTemplate: `${this.title} —— mstrlaw.com`
@@ -44,9 +43,9 @@ export default {
     }
   },
   mounted() {
-    // if (process.server) {
-    //   mediumZoom('img')
-    // }
+    if (process.server) {
+      mediumZoom('img')
+    }
     setTimeout( () => {
       this.visibleClass = 'visible'
     }, 50)
@@ -66,20 +65,10 @@ export default {
           body: res.data.data.body
         }
       })
-    
-    // return context.app.butter.post.retrieve(context.route.params.slug)
-    //   .then(res => {
-    //     return {
-    //       title: res.data.data.title,
-    //       date: res.data.data.published,
-    //       image: res.data.data.featured_image,
-    //       body: res.data.data.body
-    //     }
-    //   })
-    //   .catch(err => {
-    //     console.log('error retrieving blog post')
-    //     console.log(err)
-    //   })
+      .catch(err => {
+        console.log('error')
+        console.log(err)
+      })
   }
 
 }
