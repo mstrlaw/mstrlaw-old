@@ -22,6 +22,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 import moment from 'moment'
 import mediumZoom from 'medium-zoom'
 
@@ -56,7 +57,7 @@ export default {
     }
   },
   asyncData(context){
-    return context.app.butter.post.retrieve(context.route.params.slug)
+    return axios.get(`https://api.buttercms.com/v2/posts/${ context.route.params.slug }?auth_token=${ process.env.CMS_TOKEN }`)
       .then(res => {
         return {
           title: res.data.data.title,
@@ -65,10 +66,20 @@ export default {
           body: res.data.data.body
         }
       })
-      .catch(err => {
-        console.log('error retrieving blog post')
-        console.log(err)
-      })
+    
+    // return context.app.butter.post.retrieve(context.route.params.slug)
+    //   .then(res => {
+    //     return {
+    //       title: res.data.data.title,
+    //       date: res.data.data.published,
+    //       image: res.data.data.featured_image,
+    //       body: res.data.data.body
+    //     }
+    //   })
+    //   .catch(err => {
+    //     console.log('error retrieving blog post')
+    //     console.log(err)
+    //   })
   }
 
 }

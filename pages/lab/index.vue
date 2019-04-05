@@ -38,7 +38,7 @@ export default {
     }
   },
   async asyncData(context){
-    console.log(context.app)
+    
     let res  = await context.app.butter.post
       .list({
         page: 1, 
@@ -49,8 +49,6 @@ export default {
         console.log(err)
         console.log('error')
       })
-
-    console.log(res.data.data)
 
     return {
       posts: res.data.data
