@@ -43,7 +43,9 @@ export default {
     }
   },
   mounted() {
-    mediumZoom('img')
+    if (process.server) {
+      mediumZoom('img')
+    }
     setTimeout( () => {
       this.visibleClass = 'visible'
     }, 50)

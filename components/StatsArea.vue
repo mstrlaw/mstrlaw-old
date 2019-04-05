@@ -24,13 +24,15 @@
 
     
     <div class="chart-wrapper">
-      <apexchart
-        v-if="hasData"
-        type="area"
-        :options="chartOptions"
-        :series="series"
-        height="150"
-      />
+      <no-ssr>
+        <apexchart
+          v-if="hasData"
+          type="area"
+          :options="chartOptions"
+          :series="series"
+          height="150"
+        />
+      </no-ssr>
     </div>
 
     <div class="faq-section">
