@@ -55,21 +55,20 @@ export default {
       return moment(this.date).format('DD MMM YY @HH:mm')
     }
   },
-  async asyncData(context){
-
-    let res = await context.app.butter.post.retrieve(context.route.params.slug)
-      .catch(function(resp) {
-        console.log(resp)
+  asyncData(context){
+    return context.app.butter.post.retrieve(context.route.params.slug)
+      .then(res => {
+        return {
+          title: res.data.data.title,
+          date: res.data.data.published,
+          image: res.data.data.featured_image,
+          body: res.data.data.body
+        }
       })
-
-    let data = res.data.data
-
-    return {
-      title: data.title,
-      date: data.published,
-      image: data.featured_image,
-      body: data.body
-    }
+      .catch(err => {
+        console.log('error retrieving blog post')
+        console.log(err)
+      })
   }
 
 }
