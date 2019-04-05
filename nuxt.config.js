@@ -1,7 +1,7 @@
 const pkg = require('./package')
 
 module.exports = {
-  mode: 'spa',
+  mode: 'universal',
 
   /*
   ** Headers of the page
@@ -63,9 +63,15 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '@/plugins/apexcharts',
     '@/plugins/butterCms',
-    '@/plugins/mediumZoom',
+    {
+      src: '@/plugins/apexcharts',
+      ssr: false
+    },
+    {
+      src: '@/plugins/mediumZoom',
+      ssr: false
+    },
     {
       src: '@/plugins/hotjar',
       ssr: false
